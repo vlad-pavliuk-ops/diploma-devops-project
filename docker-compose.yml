@@ -1,0 +1,16 @@
+services:
+    backend:
+        build:
+            context: ./backend
+        container_name: diploma-backend
+        ports:
+            - '5000:5000'
+
+    frontend:
+        build:
+            context: ./frontend
+        container_name: diploma-frontend
+        ports:
+            - '3000:80'
+        depends_on:
+            - backend
