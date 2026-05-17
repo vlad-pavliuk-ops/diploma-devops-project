@@ -15,7 +15,7 @@ spec:
         spec:
             containers:
                 - name: frontend
-                  image: 8vladpavliuk8/diploma-frontend:a744c81
+                  image: 8vladpavliuk8/diploma-frontend:df7be15
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 80
