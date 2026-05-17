@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: backend
+    namespace: diploma
 spec:
     replicas: 1
     selector:
@@ -15,8 +16,16 @@ spec:
             containers:
                 - name: backend
                   image: 8vladpavliuk8/diploma-backend:latest
+                  imagePullPolicy: Always
                   ports:
                       - containerPort: 5000
+                  resources:
+                      requests:
+                          cpu: '100m'
+                          memory: '128Mi'
+                      limits:
+                          cpu: '500m'
+                          memory: '256Mi'
                   readinessProbe:
                       httpGet:
                           path: /api/health
@@ -34,6 +43,7 @@ apiVersion: v1
 kind: Service
 metadata:
     name: backend
+    namespace: diploma
 spec:
     selector:
         app: backend
