@@ -15,7 +15,7 @@ spec:
         spec:
             containers:
                 - name: backend
-                  image: 8vladpavliuk8/diploma-backend:latest
+                  image: 8vladpavliuk8/diploma-backend:7e716f7
                   imagePullPolicy: Always
                   ports:
                       - containerPort: 5000
